@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>Blog</h1>
+    <content>
+        {% for post in posts%}
+        <a href='{% url 'blog:detail' post.id %}' >{{post.title}}</a>
+        {% endfor %}
+        <br>
+    </content>
     <a href="{% url 'blog:create' %}">Create</a>
 </body>
 </html>
