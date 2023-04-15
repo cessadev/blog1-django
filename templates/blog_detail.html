@@ -1,3 +1,5 @@
 {{post.id}}
 {{post.title}}
 {{post.content}}
+<a href='{% url 'blog:update' post.id %}'>Update</a>
+<a href='{% url 'blog:home' %}'>Back</a>
