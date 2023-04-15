@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +9,14 @@
     <title>Blog</title>
 </head>
 <body>
-    <h1>Blog</h1>
+    <h1>Blog List</h1>
     <content>
         {% for post in posts%}
-        <a href='{% url 'blog:detail' post.id %}' >{{post.title}}</a>
+        <a class='text-blue-500' href='{% url 'blog:detail' post.id %}' >{{post.title}}</a>
         {% endfor %}
         <br>
     </content>
-    <a href="{% url 'blog:create' %}">Create</a>
+    <a class='text-blue-500' href="{% url 'blog:create' %}">Create</a>
 </body>
 </html>
+{% endblock content %}
