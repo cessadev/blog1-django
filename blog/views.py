@@ -3,16 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import View, UpdateView, DeleteView
 
 from .forms import PostCreateForm
-from .models import Post
-
-class BlogCreateView(View):
-    def get(self, request, *args, **kwargs):
-        form=PostCreateForm()
-        context = {
-            'form':form
-        }
-        return render(request, 'blog_create.html', context)
-    
+from .models import Post    
     
 class BlogListView(View):
     def get(self, request, *args, **kwargs):
@@ -22,6 +13,14 @@ class BlogListView(View):
         }
         return render(request, 'blog_list.html', context)
 
+
+class BlogCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form=PostCreateForm()
+        context = {
+            'form':form
+        }
+        return render(request, 'blog_create.html', context)
     
     def post(self, request, *args, **kwargs):
         if request.method=='POST':

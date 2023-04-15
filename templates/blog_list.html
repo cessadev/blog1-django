@@ -11,11 +11,10 @@
 <body>
     <h1>Blog List</h1>
     <content>
-        {% for post in posts%}
-        <a class='text-blue-500' href='{% url 'blog:detail' post.id %}' >{{post.title}}</a>
-        {% endfor %}
-        <br>
-    </content>
+    {% for post in posts%}
+    <a class='text-blue-500' href='{% url 'blog:detail' post.id %}'>{{post.title}}</a>
+    {% endfor %}
+    </content><br>
     <a class='text-blue-500' href="{% url 'blog:create' %}">Create</a>
 </body>
 </html>

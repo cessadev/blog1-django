@@ -12,11 +12,11 @@
     <h1>Create blog</h1>
     <form method='POST'>
     {% csrf_token %}
-    <p>Add a title:</p>
+    <p>Add a title</p>
     title{{form.title}}
-    <p>Add a description:</p>
+    <p>Add a description</p>
     content{{form.content}}
-    <button type='submit'>Submit</button>
+    <button class='text-blue-500' type='submit'>Submit</button>
     </form>
 </body>
 </html>
